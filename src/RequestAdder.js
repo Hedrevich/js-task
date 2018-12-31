@@ -1,5 +1,7 @@
 import axios from 'axios'
 import Person from './Person'
+import Book from './Book'
+import Publisher from './Publisher'
 import { toForm, toGrid } from './htmlCreators'
 
 function RequestAdder() {
@@ -12,6 +14,7 @@ RequestAdder.prototype.setFilter = function () {
     let fname = document.getElementById("fname").value;
     let lname = document.getElementById("lname").value;
     let age = document.getElementById("age").value;
+  
 
     let filter = "";
     if (id !== ""){
@@ -54,8 +57,8 @@ RequestAdder.prototype.useGetRequest = function() {
 
   return axios({
     method:'get',
-    url:'http://samples.databoom.space/api1/sampledb/collections/allobjects',
-    params: { "$format": "json", "$filter": filter, "$expand": "likes,likes/publisher" }
+    url:'http://samples.databoom.space/api1/sandboxdb/collections/allobjects',
+    params: { "$format": "json", /*"$filter": filter,*/ "$expand": "likes,likes/publisher" }
   })
   .then(({ data: { d: { results = [] } = {} } = {} }) => {
     this.persons = results.map( item => new Person(item));
