@@ -1,3 +1,4 @@
+import Publisher from './Publisher'
 function Book(book) {
     this.id = book.id;
     this.title = book.title;
@@ -16,6 +17,5 @@ function Book(book) {
     catch (e){
         this.publisher = "unknown";
     }
-
 }
 export default Book 

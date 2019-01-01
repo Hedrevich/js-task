@@ -1,7 +1,5 @@
 import axios from 'axios'
 import Person from './Person'
-import Book from './Book'
-import Publisher from './Publisher'
 import { toForm, toGrid } from './htmlCreators'
 
 function RequestAdder() {
