@@ -1,5 +1,4 @@
 import Book from './Book'
-import Publisher from './Publisher'
 function Person(person) {
   this.id = person.id;
   this.firstname = person.firstname;

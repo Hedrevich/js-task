@@ -56,7 +56,7 @@ RequestAdder.prototype.useGetRequest = function() {
   return axios({
     method:'get',
     url:'http://samples.databoom.space/api1/sandboxdb/collections/allobjects',
-    params: { "$format": "json", /*"$filter": filter,*/ "$expand": "likes,likes/publisher" }
+    params: { "$format": "json", "$filter": filter, "$expand": "likes,likes/publisher" }
   })
   .then(({ data: { d: { results = [] } = {} } = {} }) => {
     this.persons = results.map( item => new Person(item));
